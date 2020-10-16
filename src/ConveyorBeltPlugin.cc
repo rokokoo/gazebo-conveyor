@@ -74,7 +74,8 @@ void ConveyorBeltPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
   }
 
   // Set the point where the link will be moved to its starting pose.
-  this->limit = this->joint->UpperLimit(0) - 0.6;
+  // this->limit = this->joint->UpperLimit(0) - 0.6;
+  this->limit = this->joint->UpperLimit(0) * 0.4;
 
   // Initialize Gazebo transport
   this->gzNode = transport::NodePtr(new transport::Node());
