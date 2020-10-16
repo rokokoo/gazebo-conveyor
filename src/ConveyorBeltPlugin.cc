@@ -75,6 +75,8 @@ void ConveyorBeltPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 
   // Set the point where the link will be moved to its starting pose.
   // this->limit = this->joint->UpperLimit(0) - 0.6;
+
+  // Belt has to move 40% of the limit to be respawned
   this->limit = this->joint->UpperLimit(0) * 0.4;
 
   // Initialize Gazebo transport
@@ -101,6 +103,12 @@ void ConveyorBeltPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
   // Listen to the update event that is broadcasted every simulation iteration.
   this->updateConnection = event::Events::ConnectWorldUpdateBegin(
     std::bind(&ConveyorBeltPlugin::OnUpdate, this));
+
+  // Set the maximum belt linear velocity
+  if(_sdf->HasElement("max_velocity"))
+  {
+    this->kMaxBeltLinVel = _sdf->Get<double>("max_velocity");
+  }
 }
 
 /////////////////////////////////////////////////

@@ -12,6 +12,7 @@ Add this to the end of your URDF/Xacro
         <robot_namespace>/robot_ns</robot_namespace>
         <link>belt_link</link>
         <update_rate>10</update_rate>
+        <max_velocity>0.2</max_velocity>
     </plugin>
 </gazebo>
 ```
