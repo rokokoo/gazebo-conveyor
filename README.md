@@ -19,7 +19,7 @@ Add this to the end of your URDF/Xacro
 
 The belt is active by default, with power of 0%. 
 
-Maximum linear velocity is 0.2 m/s, but I am planning to change it into a variable, that can be set within the plugin tag.
+You can change the belts linear velocity using the `<max_velocity>` parameter.
 
 To set the power value, you need to use rosservice.
 
