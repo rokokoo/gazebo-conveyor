@@ -27,6 +27,8 @@ To set the power value, you need to use rosservice.
 
 This would set the power to 15%.
 
+I have created a simple demo of the conveyor working. It can be found in [rokokoo/conveyor_demo](https://github.com/rokokoo/conveyor_demo.git)
+
 ---
 
 ## Origins
